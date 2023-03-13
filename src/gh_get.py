@@ -10,11 +10,11 @@ def getcont(user, day, returnformalday=False):
         if not day in ln:
             continue
 
-        cont = int(ln[ln.find("data-level=\"") + 12:ln.find("rx=") - 2])
+        cont = int(ln[ln.find("\">") + 2:ln.find("contribution")])
         if returnformalday == False:
             return cont
 
         else:
-            formalday = ln[ln.find("contributions on ") + 17:ln.find("</rect>")]
+            formalday = ln[ln.find("contribution") + 16:ln.find("</rect>")]
             return cont, formalday
 
