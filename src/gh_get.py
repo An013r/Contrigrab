@@ -10,7 +10,11 @@ def getcont(user, day, returnformalday=False):
         if not day in ln:
             continue
 
-        cont = int(ln[ln.find("\">") + 2:ln.find("contribution")])
+        cont = ln[ln.find("\">") + 2:ln.find("contribution")]
+        try:
+            cont = int(cont)
+        except:
+            cont = 0
         if returnformalday == False:
             return cont
 

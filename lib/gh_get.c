@@ -6,7 +6,9 @@
 size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata) {
     size_t num_bytes = size * nmemb;
     char *response = (char *) ptr;
-    printf("%.*s", (int) num_bytes, response);
+    printf("%s", response);
+    printf("OK");
+    //printf("%.*s", (int) num_bytes, response);
     return num_bytes;
 }
 
@@ -23,18 +25,14 @@ char *getcont(char user[], char day[]) {
     CURLcode res;
     curl = curl_easy_init();
     if (curl) {
-        printf("Curl");
         curl_easy_setopt(curl, CURLOPT_URL, url);
-        //curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
         res = curl_easy_perform(curl);
         if (res != CURLE_OK) {
             return curl_easy_strerror(res);
         }
         curl_easy_cleanup(curl);
     }
-    printf("originally where free() was");
-    //free(url);
-    printf("after");
     return "";
 }
 
@@ -42,7 +40,6 @@ char *getcont(char user[], char day[]) {
 
 int main() {
     char *test = getcont("An013r", "23-03-13");
-    printf("%s", test);
-    free(test);
+    //printf("%s", test);
     return 0;
 }

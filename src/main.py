@@ -1,7 +1,7 @@
 import sys
 import gh_get as gh
 
-if len(sys.argv) <= 1:
+if len(sys.argv) <= 2:
     print("Not Enough Arguments")
     print("contrigrab {user} {day}\n\nday must be in mm-dd format(ex: 02-21 for February 21st) or yy-mm-dd(ex: 23-02-21 for February 21st, 2023), this won't never work for the years before the last year, only this year and the previous year will work")
     exit(1)
