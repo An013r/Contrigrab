@@ -2,7 +2,7 @@ import os, sys, requests
 
 def getcont(user, day, returnformalday=False):
     page = requests.get("https://github.com/" + user).text
-    # Removes everything in the HTML file thats not needed 
+    # Removes everything in the HTML file thats not needed
     page = page[page.find("js-calendar-graph-svg"):page.find("</g>  </svg>")]
     page = page.split("\n")
 

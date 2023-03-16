@@ -4,4 +4,4 @@ this file stores all of the library files.
 
 - [x] Python
 - [ ] Rust
-- [ ] (in development) C/C++
+- [ ] C/C++ (read comments in library file)
