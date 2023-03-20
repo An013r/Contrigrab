@@ -11,6 +11,6 @@ day must be in mm-dd format(ex: 02-21 for February 21st) or yy-mm-dd(ex: 23-02-2
 the yy-mm-dd method won't work for the years before the last year, **only this year and the previous year will work**
 
 ## TODO
-- [x] python library
+- [x] python library (in /src/)
 - [ ] rust library
-- [ ] (maybe?) C/C++ library
+- [ ] C/C++ library (read comment in gh_get.c)

@@ -80,9 +80,3 @@ int getcont(char* user, char* day, int returnformalday) {
     }
     return returnformalday ? formalday : cont;
 }
-
-int main() {
-    int cont = getcont("An013r", "0af3-18", 0);
-    printf("%d\n", cont);
-    return 0;
-}
