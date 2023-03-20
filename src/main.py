@@ -18,12 +18,12 @@ for arg in sys.argv:
         fnd += 1
     elif fnd == 1 and arg[0] != "-":
         day = arg
-    elif arg == "-P" or arg == "--parse":
-        parsable = True
+    elif arg == "-a" or arg == "--all":
+        al = True
 else:
-    if not parsable:
+    if not all:
         cont, fday = gh.getcont(user, day=day, returnformalday=True)
         print("User " + user + " has contributed " + str(cont) + " times on " + fday)
-    elif parsable:
-        cont, fday = gh.getcont(user, day=day, returnformalday=True)
-        print(str(cont))
+    else:
+        conts = gh.getcontall(user)
+        print(conts)
